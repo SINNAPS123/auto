@@ -1,0 +1,28 @@
+.loading-spinner-container { /* Nume clasă actualizat */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%; /* Ocupă lățimea containerului părintelui */
+  text-align: center;
+}
+
+.loading-spinner-indicator { /* Nume clasă actualizat */
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #007bff; /* Blue */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite; /* Viteză puțin mai mare */
+}
+
+.loading-spinner-message { /* Nume clasă actualizat */
+  margin-top: 12px;
+  font-size: 1em; /* Mărime font mai mare */
+  color: #333; /* Culoare mai închisă pentru contrast */
+  font-weight: 500;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
