@@ -1,0 +1,242 @@
+/* src/App.css */
+body {
+  margin: 0; /* Resetează margin default al body */
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+               'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f6f8; /* Fundal general pentru întreaga pagină */
+  color: #333; /* Culoare text default */
+  line-height: 1.6;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex-grow: 1;
+  padding: 20px 25px; /* Padding general pentru conținut */
+  /* max-width: 1600px;  */ /* O lățime maximă poate fi utilă pe ecrane foarte mari */
+  /* margin-left: auto;  */
+  /* margin-right: auto; */
+}
+
+/* Stiluri generale pentru titluri de pagină */
+h2 { /* Titlul principal al paginii */
+  font-size: 1.75rem; /* Mărime font */
+  color: #2c3e50; /* O culoare sobră */
+  margin-top: 0; /* Elimină spațiul de sus dacă e primul element */
+  margin-bottom: 1.5rem; /* Spațiu sub titlu */
+  padding-bottom: 0.75rem; /* Spațiu în interiorul border-ului */
+  border-bottom: 2px solid #007bff; /* Linie de accent albastră */
+}
+
+h3 { /* Sub-titluri */
+  font-size: 1.4rem;
+  color: #34495e;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h4 { /* Titluri mai mici, ex: pentru carduri sau secțiuni */
+  font-size: 1.15rem;
+  color: #007bff; /* Culoare de accent */
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+
+/* Stiluri generale pentru formulare - aplicate la majoritatea inputurilor */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  width: 100%; /* Ocupă lățimea containerului părintelui */
+  padding: 10px 12px;
+  margin-bottom: 1rem; /* Spațiu sub fiecare input/grup */
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 0.95em;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-color: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionare verticală */
+  min-height: 80px;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+button:hover:not(:disabled) {
+  transform: translateY(-1px); /* Mic efect la hover */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Culori standard pentru butoane */
+button.primary, button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+button.primary:hover:not(:disabled), button[type="submit"]:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+button.secondary:hover:not(:disabled) { background-color: #545b62; }
+
+button.success {
+  background-color: #28a745;
+  color: white;
+}
+button.success:hover:not(:disabled) { background-color: #1e7e34; }
+
+button.danger {
+  background-color: #dc3545;
+  color: white;
+}
+button.danger:hover:not(:disabled) { background-color: #b02a37; }
+
+button.warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+button.warning:hover:not(:disabled) { background-color: #d39e00; }
+
+button.info {
+  background-color: #17a2b8;
+  color: white;
+}
+button.info:hover:not(:disabled) { background-color: #117a8b; }
+
+
+/* Stiluri pentru tabele (general) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-radius: 6px; /* Colțuri rotunjite pentru tabel */
+  overflow: hidden; /* Necesar pentru border-radius pe tabel */
+}
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+th {
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase; /* Litere mari pentru headere */
+  letter-spacing: 0.5px;
+}
+tbody tr:hover {
+  background-color: #f1f3f5;
+}
+/* Elimină border-bottom pentru ultimul rând din tbody */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Stiluri pentru mesaje de eroare/succes globale (pot fi suprascrise local) */
+.error-message {
+  color: white;
+  font-weight: bold;
+  background-color: #e74c3c; /* Roșu pentru eroare */
+  padding: 12px 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 15px 0;
+}
+.success-message {
+  color: white;
+  font-weight: bold;
+  background-color: #28a745; /* Verde pentru succes */
+  padding: 12px 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+/* Stiluri pentru carduri (general, dacă vrem să refolosim) */
+.data-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+.data-card-title {
+  margin: 0 0 10px 0;
+  color: #007bff;
+  font-size: 1.1em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+.data-card-value {
+  margin: 0;
+  color: #333;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Stil pentru iconița de alertă pe hartă */
+.vehicle-alert-icon {
+  position: relative;
+}
+.vehicle-alert-icon img {
+  display: block; /* Elimină spațiul de sub imagine dacă e inline */
+}
+.vehicle-icon-dot-alert {
+  position: absolute;
+  top: -2px; /* Ajustează poziția punctului */
+  right: -2px; /* Ajustează poziția punctului */
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  z-index: 10; /* Asigură că e deasupra iconiței principale */
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
