@@ -1,0 +1,34 @@
+/* src/components/Navigation.css */
+.main-nav {
+  background-color: #007bff;
+  padding: 8px 0; /* Redus padding-ul vertical al barei */
+  margin-bottom: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+  display: flex; /* Adăugat pentru a centra ul */
+  justify-content: center; /* Centrează ul în nav */
+}
+
+.main-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 10px; /* Padding lateral pentru ul dacă e nevoie */
+  display: flex;
+  flex-wrap: wrap; /* Permite trecerea pe rândul următor pe ecrane mici */
+  justify-content: center;
+  align-items: center;
+}
+
+.main-nav ul li {
+  margin: 5px 3px; /* Spațiere mică între itemi */
+}
+
+/* Stilurile specifice pentru NavLink (active/inactive) sunt gestionate inline în componentă
+   pentru a folosi funcția `style` a NavLink.
+   Am putea defini o clasă .active aici și să o folosim în NavLink dacă preferăm.
+   Exemplu:
+   .main-nav ul li a.active-nav-link {
+     background-color: #0056b3;
+     font-weight: bold;
+   }
+   Și în NavLink: className={({ isActive }) => isActive ? "active-nav-link" : ""}
+*/

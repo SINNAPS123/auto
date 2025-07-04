@@ -1,0 +1,14 @@
+{
+  "name": "vehicle-monitoring-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "npm run start --prefix server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "postinstall": "npm install --prefix server && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
